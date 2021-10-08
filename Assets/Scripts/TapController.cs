@@ -5,7 +5,7 @@ using UnityEngine;
 public class TapController : MonoBehaviour
 {
     public float movementSpeed;
-    public float moveConstraint = 5.5f;
+    public float moveConstraint;
     private Vector3 targetMove;
 
     private Rigidbody2D rigidbody2D;
@@ -13,6 +13,11 @@ public class TapController : MonoBehaviour
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        moveConstraint = GameManager.Instance.areaConstraintValue;
     }
 
     // Update is called once per frame
