@@ -5,7 +5,6 @@ using UnityEngine;
 public class BoxCoin : MonoBehaviour
 {
     public Vector2 scaleRandomValue;
-
     private Transform Player;
 
     private void Awake()
@@ -45,6 +44,7 @@ public class BoxCoin : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             GameManager.Instance.AddScore();
+            GameManager.Instance.RespawnBox();
             gameObject.SetActive(false);
         }
     }
