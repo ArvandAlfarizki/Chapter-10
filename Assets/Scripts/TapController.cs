@@ -17,7 +17,7 @@ public class TapController : MonoBehaviour
 
     private void Start()
     {
-        moveConstraint = GameManager.Instance.areaConstraintValue;
+        
     }
 
     // Update is called once per frame

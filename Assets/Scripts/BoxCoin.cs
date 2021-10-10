@@ -39,4 +39,13 @@ public class BoxCoin : MonoBehaviour
 
         transform.localScale = new Vector2(xScale, yScale);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameManager.Instance.AddScore();
+            gameObject.SetActive(false);
+        }
+    }
 }
